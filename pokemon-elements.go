@@ -4,6 +4,7 @@ import (
   "fmt"
   "net/http"
   "log"
+  "os"
 )
 
 func main() {
@@ -26,7 +27,12 @@ func main() {
   http.HandleFunc("/dark", dark)
   http.HandleFunc("/steel", steel)  
   http.HandleFunc("/fairy", fairy)   
-  log.Fatal(http.ListenAndServe(":80", nil))
+  port := ":" + os.Getenv("GO_SERVER_PORT")
+  if port == ":" {
+    port = ":18883"
+  }
+  addr := os.Getenv("GO_SERVER_ADDR")
+  log.Fatal(http.ListenAndServe( addr + ":18883", nil))
 }
 
 func welcome(w http.ResponseWriter, r *http.Request) {
