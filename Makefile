@@ -8,7 +8,7 @@ TARGET = pokemon-elements
 FLAGS = -o
 RM = rm -f
 COMP_VARS = GOPATH=$(BASE)
-DEV_VARS = GO_SERVER_PORT=18883 GO_SERVER_ADDR=pokemon-elements.chromatix.com.au
+DEV_VARS = GO_SERVER_PORT=18883 GO_SERVER_ADDR=127.0.0.1
 CP = cp -f
 EXPORT = export
 
