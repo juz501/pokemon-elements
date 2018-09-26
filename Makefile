@@ -12,7 +12,7 @@ DEV_VARS = GO_SERVER_PORT=18883 GO_SERVER_ADDR=pokemon-elements.chromatix.com.au
 CP = cp -f
 EXPORT = export
 
-all: build
+all: run
 
 build: clean 
 	$(COMP_VARS) $(COMPILER) $(FLAGS) $(BIN)$(TARGET) $(SRC)
